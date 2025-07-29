@@ -1,42 +1,30 @@
 import React from "react";
 import Header from "../common/Header.jsx";
-import AboutMe from "../components/AboutMe.jsx";
-import PortfolioProjects from "../components/PortfolioProjects.jsx";
-import Contact from "../components/Contact.jsx";
-import Skills from "../components/Skills.jsx";
-import Testimonials from "../components/Testimonials.jsx";
 import HeroSection from "../components/HeroSection.jsx";
-import Tabing from "../components/Tabing.jsx";
+import AboutMe from "../components/AboutMe.jsx";
+import Skills from "../components/Skills.jsx";
 import Myservices from "../components/Myservices.jsx";
+import PortfolioProjects from "../components/PortfolioProjects.jsx";
+import Testimonials from "../components/Testimonials.jsx";
 import Trainer from "../components/Trainer.jsx";
+import Contact from "../components/Contact.jsx";
+import Footer from "../common/Footer.jsx";
+import ApiTest from "../components/ApiTest.jsx";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div>
       <Header />
-
-      {/* Hero Section */}
       <HeroSection />
-
-      {/* About Section */}
       <AboutMe />
-
-      {/* Services Section */}
-      <Myservices />
-      <Trainer />
-
-      {/* Skills Section */}
       <Skills />
-
-      {/* Portfolio Section */}
+      <Myservices />
       <PortfolioProjects />
-
-      {/* Testimonials Section */}
       <Testimonials />
-      <Tabing />
-
-      {/* Contact Section */}
+      <Trainer />
+      <ApiTest />
       <Contact />
+      <Footer />
     </div>
   );
 }
