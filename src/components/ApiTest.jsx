@@ -10,6 +10,7 @@ export default function ApiTest() {
     setTestResults([]);
 
     const endpoints = [
+      // Original endpoint
       {
         url: "https://ipage-api.onrender.com/api/frontend/users/view",
         method: "POST",
@@ -18,10 +19,19 @@ export default function ApiTest() {
         url: "https://ipage-api.onrender.com/api/frontend/users/view",
         method: "GET",
       },
+      // Without /frontend prefix
       { url: "https://ipage-api.onrender.com/api/users/view", method: "POST" },
       { url: "https://ipage-api.onrender.com/api/users/view", method: "GET" },
+      // Different variations
       { url: "https://ipage-api.onrender.com/api/users", method: "GET" },
+      { url: "https://ipage-api.onrender.com/api/user/view", method: "POST" },
+      { url: "https://ipage-api.onrender.com/api/user/view", method: "GET" },
+      // Root endpoints
       { url: "https://ipage-api.onrender.com/", method: "GET" },
+      { url: "https://ipage-api.onrender.com/api", method: "GET" },
+      // Health check
+      { url: "https://ipage-api.onrender.com/health", method: "GET" },
+      { url: "https://ipage-api.onrender.com/api/health", method: "GET" },
     ];
 
     for (const endpoint of endpoints) {

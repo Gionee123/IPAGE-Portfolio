@@ -6,12 +6,13 @@ export default function Trainer() {
   let [viewData, setViewData] = useState([]);
   let [imageview, setimageview] = useState("");
   const navigate = useNavigate();
-  console.log("viewData", viewData);
+  let baseUrl = "https://company-todo-api.onrender.com";
 
   let getviewData = () => {
     axios
-      .post("https://ipage-api.onrender.com/api/frontend/users/view")
+      .post("https://company-todo-api.onrender.com/api/frontend/users/view")
       .then((res) => {
+        console.log("res data", res.data);
         if (res.data.status) {
           setViewData(res.data.data);
           setimageview(res.data.imagepath);
@@ -154,7 +155,7 @@ export default function Trainer() {
                   <div className="flex justify-center mb-4">
                     <div className="overflow-hidden w-20 h-20 bg-gray-200 rounded-full">
                       <img
-                        src={`https://ipage-api.onrender.com/uploads/Images/${v.profileImage}`}
+                        src={`${baseUrl}/uploads/Images/${v.profileImage}`}
                         alt="Emma Foster"
                         className="object-cover w-full h-full"
                       />

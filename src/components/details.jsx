@@ -9,13 +9,14 @@ export default function Details() {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
+  let baseUrl = "https://company-todo-api.onrender.com";
 
   useEffect(() => {
     // Fetch trainer details by ID
     const fetchTrainerDetails = async () => {
       try {
         const response = await axios.post(
-          `https://ipage-api.onrender.com/api/frontend/users/details/${id}`
+          `https://company-todo-api.onrender.com/api/frontend/users/details/${id}`
         );
         if (response.data.status) {
           setTrainerData(response.data.data);
@@ -109,7 +110,7 @@ export default function Details() {
                 <div className="relative mb-6 lg:mb-0 lg:mr-8">
                   <div className="relative">
                     <img
-                      src={`http://localhost:5000/uploads/Images/${trainerData.profileImage}`}
+                      src={`${baseUrl}/uploads/Images/${trainerData.profileImage}`}
                       alt={trainerData.name}
                       className="object-cover w-48 h-48 rounded-full border-4 border-white shadow-lg"
                     />
